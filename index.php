@@ -24,29 +24,48 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Store</title>
     <link rel="stylesheet" href="css/style.css?v=1.8">
+    <style>
+        /* Ensures the text and image inside the Cart link line up perfectly */
+        .cart-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Standardizes the cart image vertical alignment and size bounds */
+        .cart-icon {
+            height: 22px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
+        <div class="header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
             <h1>Welcome to Our Store</h1>
-            <nav style="display: flex; align-items: center; gap: 15px;">
+            
+            <nav style="display: flex; align-items: center; gap: 20px;">
                 
                 <?php if ($is_logged_in): ?>
-                    <a href="pages/myorders.php" class="orders-link" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 5px;">
-                        <span style="font-size: 26px; vertical-align: middle;">📋</span> My Orders
+                    <a href="pages/myorders.php" class="orders-link" style="text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
+                        <span style="font-size: 20px; line-height: 1;">📋</span> MY ORDERS
                     </a>
                 <?php endif; ?>
 
                 <a href="pages/cart.php" class="cart-link">
-                    <img src="images/cart-icon.png" alt="Cart" class="cart-icon">
-                    Cart
+                    <img src="images/cart-icon.png" alt="Cart" class="cart-icon"> CART
                 </a>
 
                 <?php if ($is_logged_in): ?>
-                    <a href="pages/logout.php" class="logout-button" style="text-decoration: none; padding: 5px 10px; background-color: #e74c3c; color: white; border-radius: 4px;">Logout</a>
+                    <a href="pages/logout.php" class="logout-button" style="text-decoration: none; padding: 6px 14px; background-color: #e74c3c; color: white; border-radius: 4px; font-weight: bold; font-size: 14px;">LOGOUT</a>
                 <?php else: ?>
-                    <a href="pages/login.php">Login</a>
-                    <a href="pages/register.php">Register</a>
+                    <a href="pages/login.php" style="color: white; text-decoration: none; font-weight: 600;">Login</a>
+                    <a href="pages/register.php" style="color: white; text-decoration: none; font-weight: 600;">Register</a>
                 <?php endif; ?>
             </nav>
         </div>
