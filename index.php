@@ -37,10 +37,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </a>
                 <?php endif; ?>
 
-                <a href="pages/cart.php" class="cart-link">
-                    <img src="images/cart-icon.png" alt="Cart" class="cart-icon">
-                    Cart
-                </a>
+                <a href="pages/cart.php" class="cart-link" style="text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;">
+                  <img src="images/cart-icon.png" alt="Cart" class="cart-icon" style="height: 20px; display: block;">
+                   CART
+                 </a>
 
                 <?php if ($is_logged_in): ?>
                     <a href="pages/logout.php" class="logout-button" style="text-decoration: none; padding: 5px 10px; background-color: #e74c3c; color: white; border-radius: 4px;">Logout</a>
