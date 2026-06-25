@@ -29,26 +29,26 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <div class="header-container">
             <h1>Welcome to Our Store</h1>
-            <nav style="display: flex; align-items: center; gap: 15px;">
-                
-                <?php if ($is_logged_in): ?>
-                    <a href="pages/myorders.php" class="orders-link" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 5px;">
-                        <span style="font-size: 26px; vertical-align: middle;">📋</span> My Orders
-                    </a>
-                <?php endif; ?>
+           <nav style="display: flex; align-items: center; gap: 25px;">
+    
+    <?php if ($is_logged_in): ?>
+        <a href="pages/myorders.php" class="orders-link" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 16px; text-transform: uppercase;">
+            <span style="font-size: 24px; line-height: 1;">📋</span> My Orders
+        </a>
+    <?php endif; ?>
 
-                <a href="pages/cart.php" class="cart-link" style="text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;">
-                  <img src="images/cart-icon.png" alt="Cart" class="cart-icon" style="height: 20px; display: block;">
-                   CART
-                 </a>
+    <a href="pages/cart.php" class="cart-link" style="text-decoration: none; color: white; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 16px; text-transform: uppercase;">
+        <img src="images/cart-icon.png" alt="Cart" class="cart-icon" style="height: 26px; width: auto; object-fit: contain; margin-top: -2px;"> 
+        <span style="display: inline-block; transform: translateY(1px);">Cart</span>
+    </a>
 
-                <?php if ($is_logged_in): ?>
-                    <a href="pages/logout.php" class="logout-button" style="text-decoration: none; padding: 5px 10px; background-color: #e74c3c; color: white; border-radius: 4px;">Logout</a>
-                <?php else: ?>
-                    <a href="pages/login.php">Login</a>
-                    <a href="pages/register.php">Register</a>
-                <?php endif; ?>
-            </nav>
+    <?php if ($is_logged_in): ?>
+        <a href="pages/logout.php" class="logout-button" style="text-decoration: none; padding: 8px 18px; background-color: #e74c3c; color: white; border-radius: 4px; font-weight: bold; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Logout</a>
+    <?php else: ?>
+        <a href="pages/login.php" style="color: white; text-decoration: none; font-weight: 600; font-size: 16px; text-transform: uppercase;">Login</a>
+        <a href="pages/register.php" style="color: white; text-decoration: none; font-weight: 600; font-size: 16px; text-transform: uppercase;">Register</a>
+    <?php endif; ?>
+</nav>
         </div>
     </header>
     <div class="main-container">
